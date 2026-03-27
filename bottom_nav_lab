@@ -1,0 +1,150 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(const BottomNavApp());
+
+class BottomNavApp extends StatelessWidget {
+  const BottomNavApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Common Widgets Lab',
+      theme: ThemeData(primarySwatch: Colors.green),
+      home: const MainScreen(),
+    );
+  }
+}
+
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
+
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  int _selectedIndex = 0;
+
+  // Final screen list including the newly detailed FavoritesScreen
+  static const List<Widget> _screens = [
+    HomeScreen(),
+    FavoritesScreen(),
+    ProfileScreen(),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Bottom Navigation Demo')),
+      body: _screens[_selectedIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _selectedIndex,
+        onTap: _onItemTapped,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favorites'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        ],
+      ),
+    );
+  }
+}
+
+// --- HOME SCREEN (SLIDE 23) ---
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+        child: const Text('Go to Details'),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const DetailsScreen()),
+          );
+        },
+      ),
+    );
+  }
+}
+
+// --- DETAILS SCREEN (SLIDE 24) ---
+class DetailsScreen extends StatelessWidget {
+  const DetailsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Details')),
+      body: Center(
+        child: ElevatedButton(
+          child: const Text('Go Back'),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
+    );
+  }
+}
+
+// --- FAVORITES SCREEN (SLIDE 25) ---
+class FavoritesScreen extends StatelessWidget {
+  const FavoritesScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text('Your favorite items appear here.'),
+    );
+  }
+}
+
+// --- PROFILE SCREEN (LAB 1 REUSE) ---
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Card(
+        elevation: 8,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+        child: Container(
+          width: 300,
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const CircleAvatar(
+                radius: 40,
+                backgroundImage: AssetImage('assets/images/profile.png'),
+              ),
+              const SizedBox(height: 12),
+              const Text('Alex Johnson', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+              const Text('Flutter Developer', style: TextStyle(fontSize: 16, color: Colors.grey)),
+              const SizedBox(height: 16),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.email),
+                  SizedBox(width: 20),
+                  Icon(Icons.phone),
+                  SizedBox(width: 20),
+                  Icon(Icons.share),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
