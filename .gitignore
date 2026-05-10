@@ -1,26 +1,124 @@
-# Flutter/Dart
+# Flutter/Dart build files
 build/
 .dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
 .packages
-pubspec.lock
+*.lock
 
-# IDE
+# IDE files
 .idea/
 .vscode/
-
-# Generated binaries and files
-*.g.dart
-*.freezed.dart
-*.mocks.dart
-
-# Platform-generated files
-android/app/src/main/gen/
-ios/Flutter/Generated.xcconfig
-linux/flutter/generated_plugin_registrant.h
-macos/Flutter/GeneratedPluginRegistrant.swift
-windows/flutter/generated_plugin_registrant.h
-
-# Temporary/cache files
-*.tmp
-*.cache
+*.swp
+*.swo
+*~
 .DS_Store
+*.iml
+*.sublime-workspace
+*.sublime-project
+
+# Generated files
+*.g.dart
+*.pb.dart
+*.pbserver.dart
+*.pbjson.dart
+*.config.dart
+*.gql.dart
+*.freezed.dart
+*.config.g.dart
+
+# Platform specific build files
+ios/Pods/
+ios/Podfile.lock
+ios/Flutter/Flutter.framework/
+ios/Flutter/Flutter.podspec
+
+# Android build files
+android/app/debug/
+android/app/profile/
+android/app/release/
+android/local.properties
+android/.gradle/
+android/captures/
+android/.gradle
+android/gradlew
+android/gradlew.bat
+
+# Web
+web/fonts/
+
+# Misc
+*.log
+*.pyc
+*.swo
+*~
+.env
+.env.local
+
+# OS specific
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+
+# Coverage
+coverage/
+
+# Produced by pub
+.dart_tool/
+pubspec.lock
+.packages
+
+# iOS/macOS
+**/ios/**/*.mode1v3
+**/ios/**/*.mode2v3
+**/ios/**/*.moved-aside
+**/ios/**/*.pbxuser
+**/ios/**/*.perspectivev3
+**/ios/**/*sync/
+**/ios/**/.sconsign.dblite
+**/ios/**/.tags*
+**/ios/**/.vscode/*
+!**/ios/**/.vscode/extensions.json
+**/ios/**/.idea/*
+!**/ios/**/.idea/runConfigurations.xml
+**/ios/**/flutter/Flutter.framework
+**/ios/**/flutter/Flutter.podspec
+**/ios/**/flutter/Flutter-Debug.xcconfig
+**/ios/**/flutter/Flutter-Release.xcconfig
+**/ios/**/GeneratedPluginRegistrant.swift
+**/ios/**/ephemeral/
+
+# macOS
+**/macos/Flutter/Flutter.framework
+**/macos/Flutter/Flutter.podspec
+**/macos/Flutter/GeneratedPluginRegistrant.swift
+**/macos/Flutter/ephemeral/
+**/macos/**/*.pbxuser
+**/macos/**/*.perspectivev3
+
+# Windows
+windows/flutter/generated_plugins.cmake
+windows/flutter/generated_plugins.cmake
+windows/flutter/generated_plugin_registrant.cc
+windows/flutter/generated_plugin_registrant.h
+windows/flutter/generated_plugins.cmake
+
+# Linux
+linux/flutter/generated_plugin_registrant.cc
+linux/flutter/generated_plugin_registrant.h
+linux/flutter/generated_plugins.cmake
+
+# Test
+test/.test_coverage.dart
+
+# Pubspec override
+pubspec_overrides.yaml
