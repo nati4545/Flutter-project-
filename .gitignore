@@ -1,54 +1,26 @@
-# Flutter / Dart
-
-# Build outputs
-/build/
-**/build/
-/android/app/build/
-
-# Dart tooling
+# Flutter/Dart
+build/
 .dart_tool/
-**/.dart_tool/
-
-# Flutter generated files
-.flutter-plugins
-.flutter-plugins-dependencies
 .packages
-.pub-cache/
-.pub/
+pubspec.lock
 
-# IDE and editor folders
+# IDE
 .idea/
 .vscode/
 
-# Misc
-*.log
+# Generated binaries and files
+*.g.dart
+*.freezed.dart
+*.mocks.dart
+
+# Platform-generated files
+android/app/src/main/gen/
+ios/Flutter/Generated.xcconfig
+linux/flutter/generated_plugin_registrant.h
+macos/Flutter/GeneratedPluginRegistrant.swift
+windows/flutter/generated_plugin_registrant.h
+
+# Temporary/cache files
 *.tmp
-*.temp
-*.swp
-
-# macOS
+*.cache
 .DS_Store
-
-# Windows
-Thumbs.db
-
-# Generated plugin files
-generated_plugin_registrant.dart
-
-# Xcode
-xcuserdata/
-*.xcworkspace
-*.xcuserstate
-
-# Visual Studio
-*.vcxproj*
-*.sln
-*.user
-
-# Assets
-**/ios/Flutter/Generated.xcconfig
-**/android/.gradle/
-**/android/app/*.iml
-**/android/app/src/debug/**
-**/android/app/src/profile/**
-**/android/app/src/main/**/GeneratedPluginRegistrant.*
